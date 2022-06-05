@@ -1,16 +1,9 @@
 import React, {useState} from 'react'
 
-function AddTransaction() {
+function AddTransaction({addTransaction}) {
     const [text,setText] = useState('');
     const [amount, setAmount] = useState(0);
 
-    const handleTextChange=(e)=>{
-        setText(e.target.value)
-    }
-
-    const handleAmountChange=(e)=>{
-        setText(e.target.value)
-    }
 
     const generateId=()=>{
         return Math.floor(Math.random()*1000000000)
@@ -36,30 +29,27 @@ function AddTransaction() {
 
   return (
     <>
-    <h3>Add new transaction</h3>
-    <form onSubmit={handleSubmit}>
-      <div className="form-control">
-        <label htmlFor="text">Text</label>
-        <input
-          type="text"
-          value={text}
-          onChange={handleTextChange}
-          placeholder="Enter text..."
-        />
-      </div>
-      <div className="form-control">
-        <label htmlFor="amount">
-          Amount <br />
-          (negative - expense, positive - income)
-        </label>
-        <input
-          type="number"
-          value={amount}
-          onChange={handleAmountChange}
-          placeholder="Enter amount..."
-        />
-      </div>
-      <button className="btn">Add transaction</button>
+        <form onSubmit={handleSubmit}>
+      <h4>Add new transaction</h4>
+      <div className="underline"></div>
+      <p>Text</p>
+      <input
+        type="text"
+        onChange={(e) => setText(e.target.value)}
+        value={text}
+        placeholder="Enter text..."
+      />
+      <p>
+        Amount<p>(negative - expense, positive - income)</p>
+      </p>
+      <input
+        type="number"
+        onChange={(e) => setAmount(e.target.value)}
+        value={amount}
+        placeholder="Enter amount..."
+      />
+
+      <button>Add transaction</button>
     </form>
   </>
   )

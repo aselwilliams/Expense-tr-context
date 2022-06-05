@@ -1,6 +1,6 @@
 import React from 'react'
 
-function IncomeExpenses() {
+function IncomeExpenses({transactions}) {
     const amounts = transactions.map((transaction)=>transaction.amount); 
     const income = amounts.filter((amount)=>amount > 0).reduce((acc, item)=>acc + item, 0)
 

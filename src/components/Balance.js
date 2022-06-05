@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Balance() {
+function Balance({transactions}) {
     const amounts = transactions.map((t)=>t.amount) //[-1200,5000]
 
     const total = amounts.reduce((acc,item)=> acc+item, 0)
