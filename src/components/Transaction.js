@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import {GlobalContext} from '../context-api/GlobalState'
 
-function Transaction({transaction, deleteTransaction}) {
-    const {id, text, amount} =transaction;
-    const customClass=amount< 0 ? 'red inline' : 'green inline'
+function Transaction({transaction}) {
+    const {deleteTransaction} = useContext(GlobalContext)
+
+    const {id, text, amount} = transaction;
+    
   return (
     <main
     className={`inline ${amount < 0 ? "red" : "green"}`}

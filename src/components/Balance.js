@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import {GlobalContext} from '../context-api/GlobalState'
 
-function Balance({transactions}) {
+function Balance() {
+    const {transactions}=useContext(GlobalContext)
+
     const amounts = transactions.map((t)=>t.amount) //[-1200,5000]
 
     const total = amounts.reduce((acc,item)=> acc+item, 0)

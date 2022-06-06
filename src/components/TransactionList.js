@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Transaction from './Transaction';
+import {GlobalContext} from '../context-api/GlobalState';
 
-function TransactionList({transactions,deleteTransaction}) {
+function TransactionList() {
+    const {transactions}=useContext(GlobalContext);
+    const {deleteTransaction}=useContext(GlobalContext);
+
   return (
    <>
    <h3>History</h3>

@@ -1,10 +1,14 @@
-import React from 'react'
+import React, {useContext} from 'react';
+import { GlobalContext } from '../context-api/GlobalState';
 
-function IncomeExpenses({transactions}) {
+function IncomeExpenses() {
+    const {transactions}=useContext(GlobalContext)
+
     const amounts = transactions.map((transaction)=>transaction.amount); 
+
     const income = amounts.filter((amount)=>amount > 0).reduce((acc, item)=>acc + item, 0)
 
-    const expense = amounts.filter((expense)=>expense< 0).reduce((acc, item)=>acc + item, 0) * -1;
+    const expense = amounts.filter((expense)=>expense < 0).reduce((acc, item)=>acc + item, 0) * -1;
   return (
     <div>
         <section className="flex">
