@@ -64,7 +64,21 @@ button {
   background-color: firebrick;
   padding: 5px;
   margin: 0;
+  position:absolute;
+  top:50%;
+  left:0;
+  transform: translate(-100%,-50%);
+  opacity:0;
+  transition:opacity 0.3s ease;
 
+}
+main{
+  width: 300px;
+  height: 40px;
+  position: relative;
+}
+main:hover .exit{
+  opacity:1;
 }
 .inline {
   display: flex;
@@ -76,45 +90,3 @@ button {
 .green {
   border-right: 5px solid lightgreen;
 }
-/* 
-.delete-btn {
-  cursor: pointer;
-  background-color: #e74c3c;
-  border: 0;
-  color: #fff;
-  font-size: 20px;
-  line-height: 20px;
-  padding: 2px 5px;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translate(-100%, -50%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.list li:hover .delete-btn {
-  opacity: 1;
-}
-
-.list li {
-  background-color: #fff;
-  box-shadow: var(--box-shadow);
-  color: #333;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  padding: 10px;
-  margin: 10px 0;
-}
-
-.list li.plus {
-  border-right: 5px solid #2ecc71;
-}
-
-.list li.minus {
-  border-right: 5px solid #c0392b;
-}
-main:hover .delete-btn{
-  opacity: 1;
-} */
