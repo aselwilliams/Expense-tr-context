@@ -64,21 +64,20 @@ button {
   background-color: firebrick;
   padding: 5px;
   margin: 0;
-  position:absolute;
-  top:50%;
-  left:0;
-  transform: translate(-100%,-50%);
-  opacity:0;
-  transition:opacity 0.3s ease;
-
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
-main{
+main {
   width: 300px;
   height: 40px;
   position: relative;
 }
-main:hover .exit{
-  opacity:1;
+main:hover .exit {
+  opacity: 1;
 }
 .inline {
   display: flex;
